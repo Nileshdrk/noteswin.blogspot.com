@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<b:theme version="2.0" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.com/2005/gml/expr">
+  <b:includable id="theme">
+    <html>
+      <head>
+        <meta charset="UTF-8"/>
+        <meta content='width=device-width, initial-scale=1' name='viewport'/>
+        <title>Notes Win</title>
+        <style>
+          /* Blogger Navigation Bar Hiding */
+          #navbar-iframe {
+            display: none !important;
+          }
+
+          /* Basic Styles */
+          body {margin:0;font-family:'Poppins',sans-serif;background:#F9F9F9;color:#333;}
+          header {background:#2C3E50;color:white;text-align:center;padding:40px 20px 20px;position:relative;}
+          header h1 {font-size:2.2em;margin:0;}
+          header p {margin:8px 0 0;font-size:1.1em;}
+          
+          /* Header Icons */
+          .top-icons {position:absolute;top:15px;right:15px;display:flex;gap:15px;}
+          .icon-btn {background:#1ABC9C;border:none;color:white;font-size:20px;border-radius:5px;padding:8px 12px;cursor:pointer;transition:0.3s;}
+          .icon-btn:hover {background:#16a085;}
+          .home-btn {position:absolute;top:15px;left:15px;}
+
+          /* Navigation */
+          nav {display:flex;justify-content:center;background:#1ABC9C;padding:12px;gap:12px;flex-wrap:wrap;}
+          nav button {background:white;border:none;padding:10px 18px;border-radius:25px;cursor:pointer;font-weight:bold;transition:0.3s;}
+          nav button:hover {background:#16a085;color:white;}
+          
+          /* Main & Sidebar Layout */
+          .container {display:flex;transition:0.3s;}
+          .sidebar {width:220px;background:#2C3E50;color:white;padding:20px;min-height:100vh;transform:translateX(100%);transition:0.3s;position:fixed;top:0;right:0;z-index:999;}
+          .sidebar.active {transform:translateX(0);}
+          .sidebar h3 {margin-top:0;}
+          .sidebar a {display:block;padding:10px;color:white;text-decoration:none;border-radius:5px;margin-bottom:6px;transition:0.3s;font-size:16px;display:flex;align-items:center;gap:10px;}
+          .sidebar a:hover {background:#1ABC9C;}
+          .sidebar .social-icon {font-size: 20px;}
+          
+          main {flex:1;padding:20px;margin-left:0;transition:0.3s;}
+          
+          /* Content Sections */
+          .section {margin-bottom:40px;}
+          .section h2 {border-bottom:2px solid #1ABC9C;padding-bottom:8px;margin-bottom:16px;}
+          .cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+          .card {background:white;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,0.1);padding:20px;transition:0.3s;cursor:pointer;}
+          .card:hover {transform:translateY(-5px);}
+          
+          /* PDF Viewer */
+          .pdf-viewer {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:9999;}
+          .pdf-viewer iframe {width:90%;height:90%;margin:5% auto;display:block;border-radius:10px;}
+          .close-btn {position:absolute;top:15px;right:25px;background:#e74c3c;color:white;border:none;font-size:18px;padding:8px 12px;border-radius:5px;cursor:pointer;}
+          
+          /* Back Button Styles */
+          .back-btn {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: #1ABC9C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000;
+          }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <link rel="me" href="https://www.blogger.com/profile/05231966194558758371" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+<!-- --><style type="text/css">@import url(//www.blogger.com/static/v1/v-css/navbar/3334278262-classic.css);
+div.b-mobile {display:none;}
+</style>
+
+</head>
+      <body><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar/7887106503407899136?origin\x3dhttps://noteswin.blogspot.com',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script>
+        <header>
+          <button class="icon-btn back-btn" id="backButton" onclick="goBack()">&#x2190;</button>
+          <div class="top-icons">
+            <button class="icon-btn" onclick="toggleMenu()">☰</button>
+          </div>
+          <h1>Notes Win</h1>
+          <p>Your Free Resource for Notes, Books & Success</p>
+        </header>
+        
+        <nav>
+          <button onclick="showExtra('model')">Model Papers</button>
+          <button onclick="showExtra('formula')">Formula Book</button>
+          <button onclick="showExtra('objective')">Objective Questions</button>
+          <button onclick="showExtra('syllabus')">Syllabus</button>
+          <button onclick="showExtra('ncert')">NCERT Books</button>
+          <button onclick="showExtra('side')">Side Books</button>
+        </nav>
+        
+        <div class="container">
+          <div class="sidebar" id="sidebar">
+            <a href="#" onclick="toggleMenu()">⬅ Back</a>
+            <a href="#" onclick="showSection('updates')">Important Updates</a>
+            
+            <h3 style="margin-top:20px;">Social</h3>
+            <a href="https://instagram.com/your_instagram" target="_blank">
+              <span class="social-icon"><i class="fab fa-instagram"></i></span> Instagram
+            </a>
+            <a href="https://t.me/your_telegram" target="_blank">
+              <span class="social-icon"><i class="fab fa-telegram-plane"></i></span> Telegram
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbAtJTrEKyZPLXaND23V" target="_blank">
+              <span class="social-icon"><i class="fab fa-whatsapp"></i></span> WhatsApp
+            </a>
+          </div>
+          
+          <main>
+            <section id="updates" class="section">
+              <h2>Latest Updates</h2>
+              <div class="cards">
+                <div class="card">Update 1</div>
+                <div class="card">Update 2</div>
+              </div>
+            </section>
+            
+            <section id="classes" class="section">
+              <h2 id="classTitle">Free Notes - Choose Your Class</h2>
+              <div class="cards" id="classList">
+                <div class="card" onclick="showSubjects('notes',9)">Class 9</div>
+                <div class="card" onclick="showSubjects('notes',10)">Class 10</div>
+                <div class="card" onclick="showSubjects('notes',11)">Class 11</div>
+                <div class="card" onclick="showSubjects('notes',12)">Class 12</div>
+              </div>
+            </section>
+            
+            <section id="subjects" class="section" style="display:none;">
+              <h2 id="subjectTitle">Subjects</h2>
+              <div class="cards" id="subjectList"></div>
+            </section>
+            <section id="chapters" class="section" style="display:none;">
+              <h2 id="chapterTitle">Chapters</h2>
+              <div class="cards" id="chapterList"></div>
+            </section>
+          </main>
+        </div>
+        
+        <div class="pdf-viewer" id="pdfViewer">
+          <button class="close-btn" onclick="closePDF()">X</button>
+          <iframe id="pdfFrame"></iframe>
+        </div>
+        
+        <script>
+          let currentView = 'home';
+          let currentType = '';
+          let currentClass = '';
+          let backButton = document.getElementById('backButton');
+          
+          // ==== Data Object (Notes, Model Papers, etc.) ====
+          const data = {
+            notes:{
+              9:{
+                "Hindi":["हिन्दी गद्य साहित्य का इतिहास","हिन्दी पद्य साहित्य का इतिहास","गद्य","पद्य","संस्कृत","व्याकरण"],
+                "Science":["विज्ञान - अध्याय 1","विज्ञान - अध्याय 2","विज्ञान - अध्याय 3","विज्ञान - अध्याय 4","विज्ञान - अध्याय 5","विज्ञान - अध्याय 6","विज्ञान - अध्याय 7","विज्ञान - अध्याय 8","विज्ञान - अध्याय 9","विज्ञान - अध्याय 10","विज्ञान - अध्याय 11","विज्ञान - अध्याय 12","विज्ञान - अध्याय 13","विज्ञान - अध्याय 14","विज्ञान - अध्याय 15"],
+                "Maths":["गणित - अध्याय 1","गणित - अध्याय 2","गणित - अध्याय 3","गणित - अध्याय 4","गणित - अध्याय 5","गणित - अध्याय 6","गणित - अध्याय 7","गणित - अध्याय 8","गणित - अध्याय 9","गणित - अध्याय 10","गणित - अध्याय 11","गणित - अध्याय 12","गणित - अध्याय 13","गणित - अध्याय 14","गणित - अध्याय 15"],
+                "Social Science":["Social Science - Part 1","Social Science - Part 2"],
+                "English":["English Grammar","English Literature"]
+              },
+              10:{
+                "Hindi":["हिन्दी गद्य","हिन्दी पद्य","काव्य सौन्दर्य के तत्व","संस्कृत खंड","हिन्दी व्याकरण","अनुवाद"],
+                "Science":["विज्ञान - अध्याय 1","विज्ञान - अध्याय 2","विज्ञान - अध्याय 3","विज्ञान - अध्याय 4","विज्ञान - अध्याय 5","विज्ञान - अध्याय 6","विज्ञान - अध्याय 7","विज्ञान - अध्याय 8","विज्ञान - अध्याय 9","विज्ञान - अध्याय 10","विज्ञान - अध्याय 11","विज्ञान - अध्याय 12","विज्ञान - अध्याय 13","विज्ञान - अध्याय 14","विज्ञान - अध्याय 15","विज्ञान - अध्याय 16"],
+                "Maths":["गणित - अध्याय 1","गणित - अध्याय 2","गणित - अध्याय 3","गणित - अध्याय 4","गणित - अध्याय 5","गणित - अध्याय 6","गणित - अध्याय 7","गणित - अध्याय 8","गणित - अध्याय 9","गणित - अध्याय 10","गणित - अध्याय 11","गणित - अध्याय 12","गणित - अध्याय 13","गणित - अध्याय 14","गणित - अध्याय 15"],
+                "Social Science":["Social Science - Part 1","Social Science - Part 2"],
+                "English":["English Grammar","English Literature"]
+              },
+              11:{
+                "Physics":["अध्याय 1: मात्रक और मापन का समाधान", "अध्याय 2: सरल रेखा में गति का समाधान", "अध्याय 3: समतल में गति का समाधान", "अध्याय 4: गति के नियम का समाधान", "अध्याय 5: कार्य, ऊर्जा और शक्ति का समाधान", "अध्याय 6: कणों के निकाय तथा घूर्णी गति का समाधान", "अध्याय 7: गुरुत्वाकर्षण का समाधान", "अध्याय 8: ठोसों के यांत्रिक गुण का समाधान", "अध्याय 9: तरलों के यांत्रिकी गुण का समाधान", "अध्याय 10: द्रव्य के तापीय गुण का समाधान", "अध्याय 11: ऊष्मागतिकी का समाधान", "अध्याय 12: अणुगति सिद्धात का समाधान", "अध्याय 13: दोलन का समाधान", "अध्याय 14: तरंगें का समाधान"],
+                "Chemistry":["अध्याय 1. रसायन विज्ञान की कुछ मूल अवधारणाएँ का समाधान", "अध्याय 2. परमाणु की संरचना का समाधान", "अध्याय 3. तत्वों का वर्गीकरण एवं गुणधर्मों में आवर्तिता का समाधान", "अध्याय 4. रासायनिक आबंधन तथा आणविक संरचना का समाधान", "अध्याय 5. ऊष्मागतिकी का समाधान", "अध्याय 7. अपचयोपचय अभिक्रियाएँ का समाधान", "अध्याय 8. कार्बनिक रसायन- कुछ आधारभूत सिद्धांत तथा तकनीकें का समाधान", "अध्याय 9. हाइड्रोकार्बन का समाधान"],
+                "Maths":["गणित - अध्याय 1","गणित - अध्याय 2","गणित - अध्याय 3","गणित - अध्याय 4","गणित - अध्याय 5","गणित - अध्याय 6","गणित - अध्याय 7","गणित - अध्याय 8","गणित - अध्याय 9","गणित - अध्याय 10","गणित - अध्याय 11","गणित - अध्याय 12","गणित - अध्याय 13","गणित - अध्याय 14","गणित - अध्याय 15","गणित - अध्याय 16"],
+                "Biology":["जीव विज्ञान - अध्याय 1", "जीव विज्ञान - अध्याय 2", "जीव विज्ञान - अध्याय 3", "जीव विज्ञान - अध्याय 4", "जीव विज्ञान - अध्याय 5", "जीव विज्ञान - अध्याय 6", "जीव विज्ञान - अध्याय 7", "जीव विज्ञान - अध्याय 8", "जीव विज्ञान - अध्याय 9", "जीव विज्ञान - अध्याय 10", "जीव विज्ञान - अध्याय 11", "जीव विज्ञान - अध्याय 12", "जीव विज्ञान - अध्याय 13", "जीव विज्ञान - अध्याय 14", "जीव विज्ञान - अध्याय 15", "जीव विज्ञान - अध्याय 16", "जीव विज्ञान - अध्याय 17", "जीव विज्ञान - अध्याय 18", "जीव विज्ञान - अध्याय 19", "जीव विज्ञान - अध्याय 20", "जीव विज्ञान - अध्याय 21", "जीव विज्ञान - अध्याय 22"]
+              },
+              12:{
+                "Physics":["अध्याय 1: वैद्युत आवेश तथा क्षेत्र","अध्याय 2: स्थिरवैद्युत विभव तथा धारिता","अध्याय 3: विद्युत धारा","अध्याय 4: गतिमान आवेश और चुंबकत्व","अध्याय 5: चुंबकत्व एवं द्रव्य","अध्याय 6: वैद्युतचुंबकीय प्रेरण","अध्याय 7: प्रत्यावर्ती धारा","अध्याय 8: वैद्युतचुंबकीय तरंगें","अध्याय 9: किरण प्रकाशिकी एवं प्रकाशिक यंत्र","अध्याय 10: तरंग-प्रकाशिकी","अध्याय 11: विकिरण तथा द्रव्य की द्वैत प्रकृति","अध्याय 12: परमाणु","अध्याय 13: नाभिक","अध्याय 14: अर्धचालक इलेक्ट्रॉनिकी: पदार्थ, युक्तियाँ तथा सरल परिपथ"],
+                "Chemistry":["विलयन", "वैद्युत रसायन", "रासायनिक बलगतिकी", "d- एवं f-ब्लॉक के तत्व", "उपसहसंयोजन यौगिक", "हैलोऐल्केन तथा हैलोऐरीन", "ऐल्कोहॉल, फीनॉल एवं ईथर", "ऐल्डिहाइड, कीटोन एवं कार्बोक्सिलिक अम्ल", "ऐमीन", "जैव-अणु"],
+                "Maths":["गणित - अध्याय 1","गणित - अध्याय 2","गणित - अध्याय 3","गणित - अध्याय 4","गणित - अध्याय 5","गणित - अध्याय 6","गणित - अध्याय 7","गणित - अध्याय 8","गणित - अध्याय 9","गणित - अध्याय 10","गणित - अध्याय 11","गणित - अध्याय 12","गणित - अध्याय 13"],
+                "Biology":["पुष्पी पौधों में लैंगिक जनन", "मानव जनन", "जनन स्वास्थ्य", "वंशागति एवं विविधता के सिद्धांत", "वंशागति का आणविक आधार", "विकास", "मानव स्वास्थ्य तथा रोग", "मानव कल्याण में सूक्ष्मजीव", "जैव प्रौद्योगिकी: सिद्धांत एवं प्रक्रम", "जैव प्रौद्योगिकी एवं उसके प्रयोग", "जीव और समष्टिया", "पारितंत्र", "जैव विविधता एवं संरक्षण", "पर्यावरण के मुद्दे"]
+              }
+            },
+            model:{
+              9:{
+                "Hindi":["हिन्दी - मॉडल पेपर"], "Science":["विज्ञान - मॉडल पेपर"], "Maths":["गणित - मॉडल पेपर"], "Social Science":["सामाजिक विज्ञान - मॉडल पेपर"], "English":["अंग्रेजी - मॉडल पेपर"]
+              },
+              10:{
+                "Hindi":["हिन्दी - मॉडल पेपर"], "Science":["विज्ञान - मॉडल पेपर"], "Maths":["गणित - मॉडल पेपर"], "Social Science":["सामाजिक विज्ञान - मॉडल पेपर"], "English":["अंग्रेजी - मॉडल पेपर"]
+              },
+              11:{
+                "Physics":["भौतिकी - मॉडल पेपर"], "Chemistry":["रसायन विज्ञान - मॉडल पेपर"], "Maths":["गणित - मॉडल पेपर"], "Biology":["जीव विज्ञान - मॉडल पेपर"]
+              },
+              12:{
+                "Physics":["भौतिकी - मॉडल पेपर"], "Chemistry":["रसायन विज्ञान - मॉडल पेपर"], "Maths":["गणित - मॉडल पेपर"], "Biology":["जीव विज्ञान - मॉडल पेपर"]
+              }
+            },
+            formula:{
+              9:{
+                "Science":["विज्ञान - फॉर्मूला शीट"], "Maths":["गणित - फॉर्मूला शीट"]
+              },
+              10:{
+                "Science":["विज्ञान - फॉर्मूला शीट"], "Maths":["गणित - फॉर्मूला शीट"]
+              },
+              11:{
+                "Physics":["भौतिकी - फॉर्मूला बुक"], "Chemistry":["रसायन विज्ञान - फॉर्मूला बुक"], "Maths":["गणित - फॉर्मूला बुक"]
+              },
+              12:{
+                "Physics":["Formulas"], "Chemistry":["Formulas"], "Maths":["Formulas"]
+              }
+            },
+            objective:{
+              9:{
+                "Hindi":["Objective - Hindi"],
+                "Science":["Objective - Science"],
+                "Maths":["Objective - Maths"],
+                "Social Science":["Objective - Social Science"],
+                "English":["Objective - English"]
+              },
+              10:{ "Science":["विज्ञान"], "Maths":["गणित"] },
+              11:{ "Physics":["भौतिकी"], "Chemistry":["रसायन विज्ञान"], "Maths":["गणित"] },
+              12:{"Physics":["Objective Set 1"],"Chemistry":["Objective Set 1"],"Maths":["Objective Set 1"]}
+            },
+            syllabus:{
+              9:{
+                "Hindi":["Syllabus - Hindi"],
+                "Science":["Syllabus - Science"],
+                "Maths":["Syllabus - Maths"],
+                "Social Science":["Syllabus - Social Science"],
+                "English":["Syllabus - English"]
+              },
+              10:{
+                "Hindi":["Syllabus - Hindi"],
+                "Science":["Syllabus - Science"],
+                "Maths":["Syllabus - Maths"],
+                "Social Science":["Syllabus - Social Science"],
+                "English":["Syllabus - English"]
+              },
+              11:{
+                "Physics":["Syllabus - Physics"],
+                "Chemistry":["Syllabus - Chemistry"],
+                "Maths":["Syllabus - Maths"],
+                "Biology":["Syllabus - Biology"]
+              },
+              12:{
+                "Physics":["Syllabus - Physics"],
+                "Chemistry":["Syllabus - Chemistry"],
+                "Maths":["Syllabus - Maths"],
+                "Biology":["Syllabus - Biology"]
+              }
+            },
+            ncert:{
+              9:{ "Hindi":["NCERT Book - Hindi"], "Science":["NCERT Book - Science"], "NCERT Book - Maths": ["NCERT Book - Maths"], "Social Science":["NCERT Book - Social Science"], "English":["NCERT Book - English"] },
+              10:{ "Hindi":["NCERT Book - Hindi"], "Science":["NCERT Book - Science"], "NCERT Book - Maths": ["NCERT Book - Maths"], "Social Science":["NCERT Book - Social Science"], "English":["NCERT Book - English"] },
+              11:{ "Physics":["NCERT Book - Physics"], "Chemistry":["NCERT Book - Chemistry"], "NCERT Book - Maths": ["NCERT Book - Maths"], "Biology":["NCERT Book - Biology"] },
+              12:{ "Physics":["NCERT Book - Physics"], "Chemistry":["NCERT Book - Chemistry"], "NCERT Book - Maths": ["NCERT Book - Maths"], "Biology":["NCERT Book - Biology"] }
+            },
+            side:{
+              9:{ "Hindi":["Side Book - Hindi"], "Science":["Side Book - Science"], "Maths":["Side Book - Maths"], "Social Science":["Side Book - Social Science"], "English":["Side Book - English"] },
+              10:{ "Hindi":["Side Book - Hindi"], "Science":["Side Book - Science"], "Maths":["Side Book - Maths"], "Social Science":["Side Book - Social Science"], "English":["Side Book - English"] },
+              11:{ "Physics":["Side Book - Physics"], "Chemistry":["Side Book - Chemistry"], "Maths":["Side Book - Maths"], "Biology":["Side Book - Biology"] },
+              12:{ "Physics":["Side Book - Physics"], "Chemistry":["Side Book - Chemistry"], "Maths":["Side Book - Maths"], "Biology":["Side Book - Biology"] }
+            }
+          };
+          
+          // ==== PDF Links (यहां आपके Google Drive Preview links हैं) ====
+          const pdfLinks = {
+            // NOTES LINKS (NOTES)
+            // Class 9 Notes links (For all chapters)
+            "हिन्दी गद्य साहित्य का इतिहास":"", "हिन्दी पद्य साहित्य का इतिहास":"", "गद्य":"", "पद्य":"", "संस्कृत":"", "व्याकरण":"",
+            "विज्ञान - अध्याय 1":"", "विज्ञान - अध्याय 2":"", "विज्ञान - अध्याय 3":"", "विज्ञान - अध्याय 4":"", "विज्ञान - अध्याय 5":"", "विज्ञान - अध्याय 6":"", "विज्ञान - अध्याय 7":"", "विज्ञान - अध्याय 8":"", "विज्ञान - अध्याय 9":"", "विज्ञान - अध्याय 10":"", "विज्ञान - अध्याय 11":"", "विज्ञान - अध्याय 12":"", "विज्ञान - अध्याय 13":"", "विज्ञान - अध्याय 14":"", "विज्ञान - अध्याय 15":"",
+            "गणित - अध्याय 1":"", "गणित - अध्याय 2":"", "गणित - अध्याय 3":"", "गणित - अध्याय 4":"", "गणित - अध्याय 5":"", "गणित - अध्याय 6":"", "गणित - अध्याय 7":"", "गणित - अध्याय 8":"", "गणित - अध्याय 9":"", "गणित - अध्याय 10":"", "गणित - अध्याय 11":"", "गणित - अध्याय 12":"", "गणित - अध्याय 13":"", "गणित - अध्याय 14":"", "गणित - अध्याय 15":"",
+            "Social Science - Part 1":"", "Social Science - Part 2":"", "English Grammar":"", "English Literature":"",
+            // Class 10 Notes links
+            "हिन्दी गद्य":"", "हिन्दी पद्य":"", "काव्य सौन्दर्य के तत्व":"", "संस्कृत खंड":"", "हिन्दी व्याकरण":"", "अनुवाद":"",
+            "विज्ञान - अध्याय 1":"", "विज्ञान - अध्याय 2":"", "विज्ञान - अध्याय 3":"", "विज्ञान - अध्याय 4":"", "विज्ञान - अध्याय 5":"", "विज्ञान - अध्याय 6":"", "विज्ञान - अध्याय 7":"", "विज्ञान - अध्याय 8":"", "विज्ञान - अध्याय 9":"", "विज्ञान - अध्याय 10":"", "विज्ञान - अध्याय 11":"", "विज्ञान - अध्याय 12":"", "विज्ञान - अध्याय 13":"", "विज्ञान - अध्याय 14":"", "विज्ञान - अध्याय 15":"", "विज्ञान - अध्याय 16":"",
+            "गणित - अध्याय 1":"", "गणित - अध्याय 2":"", "गणित - अध्याय 3":"", "गणित - अध्याय 4":"", "गणित - अध्याय 5":"", "गणित - अध्याय 6":"", "गणित - अध्याय 7":"", "गणित - अध्याय 8":"", "गणित - अध्याय 9":"", "गणित - अध्याय 10":"", "गणित - अध्याय 11":"", "गणित - अध्याय 12":"", "गणित - अध्याय 13":"", "गणित - अध्याय 14":"", "गणित - अध्याय 15":"",
+            "Social Science - Part 1":"", "Social Science - Part 2":"", "English Grammar":"", "English Literature":"",
+            // Class 11 Notes links
+            "अध्याय 1: मात्रक और मापन का समाधान":"https://drive.google.com/file/d/1zVcvw0ntKRg057imVIKUCs5BO0t8LQnU/preview",
+            "अध्याय 2: सरल रेखा में गति का समाधान":"https://drive.google.com/file/d/1acP_w4YXokNuYGzDqW5Qpcpq3Blcr3bg/preview",
+            "अध्याय 3: समतल में गति का समाधान":"https://drive.google.com/file/d/1XTzN4ijRlOcGfgHLjMLDC6Jfir_8ySgV/preview",
+            "अध्याय 4: गति के नियम का समाधान":"https://drive.google.com/file/d/1yPO_j4NDvTRFyo147nqcR85OKounvL5Y/preview",
+            "अध्याय 5: कार्य, ऊर्जा और शक्ति का समाधान":"https://drive.google.com/file/d/1Iv0MPP4dp-Vbn0IdRZeRmM_v9_wtGnxt/preview",
+            "अध्याय 6: कणों के निकाय तथा घूर्णी गति का समाधान":"https://drive.google.com/file/d/1EMmiV6epqrqGYHOu67j6NrfHLptf6W0z/preview",
+            "अध्याय 7: गुरुत्वाकर्षण का समाधान":"https://drive.google.com/file/d/1kFJ6KstrpT43deFryAY_nq5wjAuEUCho/preview",
+            "अध्याय 8: ठोसों के यांत्रिक गुण का समाधान":"https://drive.google.com/file/d/14ZdPyFKp0qdq6ulxSyElvOz1Sow1SxtZ/preview",
+            "अध्याय 9: तरलों के यांत्रिकी गुण का समाधान":"https://drive.google.com/file/d/151LGWAxlzPiVXJl0mfrEA-9F5JrhTdYF/preview",
+            "अध्याय 10: द्रव्य के तापीय गुण का समाधान":"https://drive.google.com/file/d/1_g3QRnZ7ODgv0AgSv-irkZoLvYcxvzxA/preview",
+            "अध्याय 11: ऊष्मागतिकी का समाधान":"https://drive.google.com/file/d/1FuaZ8SN14Gk9MuRQMzXWxzrN1-pnDnes/preview",
+            "अध्याय 12: अणुगति सिद्धात का समाधान":"https://drive.google.com/file/d/1EFuqM-3w0UddHJoK7VmMvTRHyoBrX496/preview",
+            "अध्याय 13: दोलन का समाधान":"https://drive.google.com/file/d/11w9rjL5pi-6cbrIK2EO5cxlTSmxI4Xve/preview",
+            "अध्याय 14: तरंगें का समाधान":"https://drive.google.com/file/d/14ZdPyFKp0qdq6ulxSyElvOz1Sow1SxtZ/preview",
+            "अध्याय 1. रसायन विज्ञान की कुछ मूल अवधारणाएँ का समाधान": "https://drive.google.com/file/d/15P3V7VA7GHVpIbpGRnUmfe2bObxky14m/preview",
+            "अध्याय 2. परमाणु की संरचना का समाधान": "https://drive.google.com/file/d/1gmMb9tzz5jpC5h0WsyCMKRJzARJxKssW/preview",
+            "अध्याय 3. तत्वों का वर्गीकरण एवं गुणधर्मों में आवर्तिता का समाधान": "https://drive.google.com/file/d/1OG7yTrOn9jygPJfOZ0sHiYzD9x9z4bV5/preview",
+            "अध्याय 4. रासायनिक आबंधन तथा आणविक संरचना का समाधान": "https://drive.google.com/file/d/1KRbvfhzRac4wmMRVS23MjhqBeZJHx5QL/preview",
+            "अध्याय 5. ऊष्मागतिकी का समाधान": "https://drive.google.com/file/d/1M-WsAmqyL0yBApcFjMyUBb24Qwl1CsvA/preview",
+            "अध्याय 7. अपचयोपचय अभिक्रियाएँ का समाधान": "https://drive.google.com/file/d/1LLveuKiWeVc31ZUvZONH8zVLUN4RvN08/preview",
+            "अध्याय 8. कार्बनिक रसायन- कुछ आधारभूत सिद्धांत तथा तकनीकें का समाधान": "https://drive.google.com/file/d/1OOo7_C5wnxvGGjyCN7uuJ9tDn5WUKLdK/preview",
+            "अध्याय 9. हाइड्रोकार्बन का समाधान": "https://drive.google.com/file/d/1xJHantrj7BBVXzZ-0kGwSDkvHwWonKUn/preview",
+            "रसायन विज्ञान - अध्याय 9": "", "रसायन विज्ञान - अध्याय 10": "", "रसायन विज्ञान - अध्याय 11": "", "रसायन विज्ञान - अध्याय 12": "", "रसायन विज्ञान - अध्याय 13": "", "रसायन विज्ञान - अध्याय 14": "",
+            // Class 12 Notes links
+            "अध्याय 1: वैद्युत आवेश तथा क्षेत्र":"https://drive.google.com/file/d/1lGQjWMVOlMakeJNrQTqwMf5z_bAawj2T/preview",
+            "अध्याय 2: स्थिरवैद्युत विभव तथा धारिता":"https://drive.google.com/file/d/1_R1y-4wtY6R-2iT4jddb4bl02EJrjmRE/preview",
+            "अध्याय 3: विद्युत धारा":"https://drive.google.com/file/d/1Db9Qk1l17a2UkGdLt2V8dOGgLNDRQ52e/preview",
+            "अध्याय 4: गतिमान आवेश और चुंबकत्व":"https://drive.google.com/file/d/1EhQThHNy_32c7lXcjCI6GzgknUX0N6db/preview",
+            "अध्याय 5: चुंबकत्व एवं द्रव्य":"https://drive.google.com/file/d/16XzCb-oCf-59aia3RZX3-4j_11PivieD/preview",
+            "अध्याय 6: वैद्युतचुंबकीय प्रेरण":"https://drive.google.com/file/d/1Q2L9hT3T6aO3FkjdkyH3miwnd-SH4nOs/preview",
+            "अध्याय 7: प्रत्यावर्ती धारा":"https://drive.google.com/file/d/1NiIWEtJvDVjpizGXEwV_ivHJQBdGOAnj/preview",
+            "अध्याय 8: वैद्युतचुंबकीय तरंगें":"https://drive.google.com/file/d/1Dp9V-2Xws9dQXNAIh7PhBFmNq21gFgW0/preview",
+            "अध्याय 9: किरण प्रकाशिकी एवं प्रकाशिक यंत्र":"https://drive.google.com/file/d/1Mg0JbPLjz7mNMpreniPcPXApabQLGFjU/preview",
+            "अध्याय 10: तरंग-प्रकाशिकी":"https://drive.google.com/file/d/13r4FBNxLouqa7SQjRLfEkW4Vir0-12Ui/preview",
+            "अध्याय 11: विकिरण तथा द्रव्य की द्वैत प्रकृति":"https://drive.google.com/file/d/1xWoFGeErKyUAuB0Vt5p4_UCvIliLepRd/preview",
+            "अध्याय 12: परमाणु":"https://drive.google.com/file/d/1ppiQWq7e66egXoP_qsmeVfVAJT1TvpA5/preview",
+            "अध्याय 13: नाभिक":"https://drive.google.com/file/d/1q43-jK3ajbq9MWSQrMQhkOdidlPtNEmv/preview",
+            "अध्याय 14: अर्धचालक इलेक्ट्रॉनिकी: पदार्थ, युक्तियाँ तथा सरल परिपथ":"https://drive.google.com/file/d/1kyH75cCZowVQCN6KnmHmG44PLR4KAkVt/preview",
+            "विलयन": "https://drive.google.com/file/d/1cXTkSrNreeKFMHpfEcxBI176v5GKrL0b/preview",
+            "वैद्युत रसायन": "https://drive.google.com/file/d/18pX9q9bGEY6k9OxvJApDzihKZQpfD9dj/preview",
+            "रासायनिक बलगतिकी": "https://drive.google.com/file/d/1aWWQp3vqqTUeLKral8fAhsDnS-1Lvj03/preview",
+            "d- एवं f-ब्लॉक के तत्व": "https://drive.google.com/file/d/1Qdj0nNKkHo-o-8Q-EO6CJoOsHxrlrarO/preview",
+            "उपसहसंयोजन यौगिक": "https://drive.google.com/file/d/1oh2Scyfdlb31tN48gqit2MZ2aiy883yP/preview",
+            "हैलोऐल्केन तथा हैलोऐरीन": "https://drive.google.com/file/d/1f3nmSN8zhRMOrhLm7yL0RNviMJH8fc1L/preview",
+            "ऐल्कोहॉल, फीनॉल एवं ईथर": "https://drive.google.com/file/d/1cb3HJwSbYnIy_0TncPjtJ3aaCHICCkRK/preview",
+            "ऐल्डिहाइड, कीटोन एवं कार्बोक्सिलिक अम्ल": "https://drive.google.com/file/d/1VKCCUaVvg4pN2Dy5JRG3SCU7RjjujOGx/preview",
+            "ऐमीन": "https://drive.google.com/file/d/1msLZf3-Wzthsew728zu5u2cv16iWc-9h/preview",
+            "जैव-अणु": "https://drive.google.com/file/d/1il--MfZioYyzL6lXOasxyPI1cLO87JXG/preview",
+            "पुष्पी पौधों में लैंगिक जनन": "https://drive.google.com/file/d/1YG5GuOiHr2MwSYiIxhT8oWwUqhafwJoo/preview",
+            "मानव जनन": "https://drive.google.com/file/d/1a66nvkipGYUvMpd4x6xdm7mHuV_P0cF9/preview",
+            "जनन स्वास्थ्य": "https://drive.google.com/file/d/1t3bjQOyLJ63NBp77WyHXeJ3heAPbRmit/preview",
+            "वंशागति एवं विविधता के सिद्धांत": "https://drive.google.com/file/d/12Ky12amzQjsIwSkjyPfvW8qIBvRgae1K/preview",
+            "वंशागति का आणविक आधार": "https://drive.google.com/file/d/1KRSUzH0c-3e8lBVTdnK0GqZvh1D5Icxm/preview",
+            "विकास": "https://drive.google.com/file/d/1SdY-xjRN4o19-wIJJJOkaKnmc2XLhEtr/preview",
+            "मानव स्वास्थ्य तथा रोग": "https://drive.google.com/file/d/175_J3YQoZIBNPOh5sxa9A9zjdxDdAy-M/preview",
+            "मानव कल्याण में सूक्ष्मजीव": "https://drive.google.com/file/d/1dgr1YrGwRDh9SXqD9-m1qjLunq2Wn7Ys/preview",
+            "जैव प्रौद्योगिकी: सिद्धांत एवं प्रक्रम": "https://drive.google.com/file/d/1HO0eYm2VySTVcKwbwc3nDsMYrKDc1XOS/preview",
+            "जैव प्रौद्योगिकी एवं उसके प्रयोग": "https://drive.google.com/file/d/1HYtgSxQEABqbJ1m9OblO4QhVgxwySaw6/preview",
+            "जीव और समष्टिया": "https://drive.google.com/file/d/1rDf2A_fX0dtFiE6MyIjqna8e2HtYb8Mb/preview",
+            "पारितंत्र": "https://drive.google.com/file/d/1JIWlVkSoQWKwu3FXXmPsBdLrC4P_oqgm/preview",
+            "जैव विविधता एवं संरक्षण": "https://drive.google.com/file/d/10Kn7tnH2rlYOMxpVQwztwrVyhMeHEdUa/preview",
+            "पर्यावरण के मुद्दे": "",
+            
+            // ===========================================
+            // 👇🏽 APNE GOOGLE DRIVE LINKS YAHAAN PASTE KAREIN
+            // Yaad rakhein: link ke aakhir mein /preview lagaana hai
+            // ===========================================
+
+            // MODEL PAPERS - CLASS 9
+            "हिन्दी - मॉडल पेपर": "",
+            "विज्ञान - मॉडल पेपर": "",
+            "गणित - मॉडल पेपर": "",
+            "सामाजिक विज्ञान - मॉडल पेपर": "",
+            "अंग्रेजी - मॉडल पेपर": "",
+
+            // MODEL PAPERS - CLASS 10
+            "हिन्दी - मॉडल पेपर": "",
+            "विज्ञान - मॉडल पेपर": "",
+            "गणित - मॉडल पेपर": "",
+            "सामाजिक विज्ञान - मॉडल पेपर": "",
+            "अंग्रेजी - मॉडल पेपर": "",
+
+            // MODEL PAPERS - CLASS 11
+            "भौतिकी - मॉडल पेपर": "",
+            "रसायन विज्ञान - मॉडल पेपर": "",
+            "गणित - मॉडल पेपर": "",
+            "जीव विज्ञान - मॉडल पेपर": "",
+
+            // MODEL PAPERS - CLASS 12
+            "भौतिकी - मॉडल पेपर": "",
+            "रसायन विज्ञान - मॉडल पेपर": "",
+            "गणित - मॉडल पेपर": "",
+            "जीव विज्ञान - मॉडल पेपर": "",
+            
+            // -------------------------------------------
+
+            // FORMULA BOOKS - CLASS 9
+            "विज्ञान - फॉर्मूला शीट": "",
+            "गणित - फॉर्मूला शीट": "",
+
+            // FORMULA BOOKS - CLASS 10
+            "विज्ञान - फॉर्मूला शीट": "",
+            "गणित - फॉर्मूला शीट": "",
+
+            // FORMULA BOOKS - CLASS 11
+            "भौतिकी - फॉर्मूला बुक": "",
+            "रसायन विज्ञान - फॉर्मूला बुक": "",
+            "गणित - फॉर्मूला बुक": "",
+
+            // FORMULA BOOKS - CLASS 12
+            "Formulas": "https://drive.google.com/file/d/1Kyb_5_zhiWllKAZ0_m3H2Erl26Uvdn3K/preview",
+            "Formulas": "",
+            "Formulas": "",
+            
+            // -------------------------------------------
+
+            // OBJECTIVE QUESTIONS - CLASS 9
+            "Objective - Hindi": "",
+            "Objective - Science": "",
+            "Objective - Maths": "",
+            "Objective - Social Science": "",
+            "Objective - English": "",
+            
+            // OBJECTIVE QUESTIONS - CLASS 10
+            "विज्ञान": "",
+            "गणित": "",
+            
+            // OBJECTIVE QUESTIONS - CLASS 11
+            "भौतिकी": "",
+            "रसायन विज्ञान": "",
+            "गणित": "",
+            
+            // OBJECTIVE QUESTIONS - CLASS 12
+            "Objective Set 1": "",
+            
+            // -------------------------------------------
+
+            // SYLLABUS - CLASS 9
+            "Syllabus - Hindi": "",
+            "Syllabus - Science": "",
+            "Syllabus - Maths": "",
+            "Syllabus - Social Science": "",
+            "Syllabus - English": "",
+
+            // SYLLABUS - CLASS 10
+            "Syllabus - Hindi": "",
+            "Syllabus - Science": "",
+            "Syllabus - Maths": "",
+            "Syllabus - Social Science": "",
+            "Syllabus - English": "",
+
+            // SYLLABUS - CLASS 11
+            "Syllabus - Physics": "",
+            "Syllabus - Chemistry": "",
+            "Syllabus - Maths": "",
+            "Syllabus - Biology": "",
+
+            // SYLLABUS - CLASS 12
+            "Syllabus - Physics": "https://drive.google.com/file/d/1WmcivlzcMIcqwfQ3yUZrX3K7ThkcDMkP/preview",
+            "Syllabus - Chemistry": "https://drive.google.com/file/d/16SRpZZegBHg05AXe-pzr-wS-ncuYGO6-/preview",
+            "Syllabus - Maths": "https://drive.google.com/file/d/1ebf2gW86Tp1XVz4_Pbx6Hr3FioaP8XEv/preview",
+            "Syllabus - Biology": "https://drive.google.com/file/d/11e1teWRNpf6bZFpsM6GdjL-A2_olsNZw/preview",
+            "Syllabus - Hindi": "https://drive.google.com/file/d/1Zgyy2PQBqmKxZo21uDwKi0WXPfOS4KJf/preview",
+            "Syllabus - English": "https://drive.google.com/file/d/1uo8lkmmYgutRrZ9SV8ir3xzzUEdsrIbv/preview",
+            
+            // -------------------------------------------
+
+            // NCERT BOOKS - CLASS 9
+            "NCERT Book - Hindi": "",
+            "NCERT Book - Science": "",
+            "NCERT Book - Maths": "",
+            "NCERT Book - Social Science": "",
+            "NCERT Book - English": "",
+            
+            // NCERT BOOKS - CLASS 10
+            "NCERT Book - Hindi": "",
+            "NCERT Book - Science": "",
+            "NCERT Book - Maths": "",
+            "NCERT Book - Social Science": "",
+            "NCERT Book - English": "",
+            
+            // NCERT BOOKS - CLASS 11
+            "NCERT Book - Physics": "",
+            "NCERT Book - Chemistry": "",
+            "NCERT Book - Maths": "",
+            "NCERT Book - Biology": "",
+            
+            // NCERT BOOKS - CLASS 12
+            "NCERT Book - Physics": "",
+            "NCERT Book - Chemistry": "",
+            "NCERT Book - Maths": "",
+            "NCERT Book - Biology": "",
+            
+            // -------------------------------------------
+            
+            // SIDE BOOKS - CLASS 9
+            "Side Book - Hindi": "",
+            "Side Book - Science": "",
+            "Side Book - Maths": "",
+            "Side Book - Social Science": "",
+            "Side Book - English": "",
+            
+            // SIDE BOOKS - CLASS 10
+            "Side Book - Hindi": "",
+            "Side Book - Science": "",
+            "Side Book - Maths": "",
+            "Side Book - Social Science": "",
+            "Side Book - English": "",
+            
+            // SIDE BOOKS - CLASS 11
+            "Side Book - Physics": "",
+            "Side Book - Chemistry": "",
+            "Side Book - Maths": "",
+            "Side Book - Biology": "",
+            
+            // SIDE BOOKS - CLASS 12
+            "Side Book - Physics": "",
+            "Side Book - Chemistry": "",
+            "Side Book - Maths": "",
+            "Side Book - Biology": "",
+            
+            // -------------------------------------------
+            // Class 12 Maths Notes links (Paste your links here)
+            "गणित - अध्याय 1": "https://drive.google.com/file/d/11d26jWkREApUYnd6zf57Wb_C1bFlWRCs/preview",
+            "गणित - अध्याय 2": "https://drive.google.com/file/d/1EU_U73rQ25jsRUastW1ncXd2Z5K5qm1K/preview",
+            "गणित - अध्याय 3": "https://drive.google.com/file/d/1WrkIKaY5nFkW-umNHjFSAYOmmPmt0zUr/preview",
+            "गणित - अध्याय 4": "https://drive.google.com/file/d/1VlCGpVzrFAXiGiNMnr5Cw5-y81vyLWZd/preview",
+            "गणित - अध्याय 5": "https://drive.google.com/file/d/1KO7NH8Un7wiFK1TqnWdVq09CUlPtlBk2/preview",
+            "गणित - अध्याय 6": "https://drive.google.com/file/d/163GAw6oEz9UxWO1SV014DQXEfTySox40/preview",
+            "गणित - अध्याय 7": "https://drive.google.com/file/d/1DZxsduN6dPl8--TMLfN2YBlEVwmj8DDI/preview",
+            "गणित - अध्याय 8": "https://drive.google.com/file/d/1Yh7SzuFv5zTKAe-X7q3_dP6SsjVhBYP9/preview",
+            "गणित - अध्याय 9": "https://drive.google.com/file/d/14bJyppjIbYW7pV3ul2PvZrXkE-iPWXyP/ppreview",
+            "गणित - अध्याय 10": "",
+            "गणित - अध्याय 11": "",
+            "गणित - अध्याय 12": "",
+            "गणित - अध्याय 13": "",
+            // -------------------------------------------
+
+          };
+          
+          function showSection(id){
+            hideAll();
+            document.getElementById(id).style.display = 'block';
+            if (id === 'updates' || id === 'classes') {
+              currentView = 'home';
+              backButton.style.display = 'none';
+            }
+          }
+          
+          function showSubjects(type, cls){
+            hideAll();
+            document.getElementById('subjects').style.display = 'block';
+            document.getElementById('subjectTitle').innerText = "Subjects";
+            const list = document.getElementById('subjectList');
+            list.innerHTML = "";
+            
+            currentView = 'subjects';
+            currentType = type;
+            currentClass = cls;
+            backButton.style.display = 'block';
+            
+            if(data[type] && data[type][cls]){
+              Object.keys(data[type][cls]).forEach(sub=>{
+                const div = document.createElement('div');
+                div.className = "card";
+                div.innerText = sub;
+                // If it's a direct book, open PDF
+                if(type === 'model' || type === 'formula' || type === 'objective' || type === 'syllabus' || type === 'ncert' || type === 'side'){
+                  div.onclick = () => openPDF(type, cls, sub);
+                } else {
+                  // If it's notes, show chapters
+                  div.onclick = () => showChapters(type, cls, sub);
+                }
+                list.appendChild(div);
+              });
+            }
+          }
+          
+          function showChapters(type, cls, sub){
+            hideAll();
+            document.getElementById('chapters').style.display = 'block';
+            document.getElementById('chapterTitle').innerText = "Chapters";
+            const list = document.getElementById('chapterList');
+            list.innerHTML = "";
+            
+            currentView = 'chapters';
+            currentSubject = sub;
+            backButton.style.display = 'block';
+            
+            if(data[type] && data[type][cls] && data[type][cls][sub]){
+              data[type][cls][sub].forEach(ch => {
+                const div = document.createElement('div');
+                div.className = "card";
+                div.innerText = ch;
+                div.onclick = () => openPDF(type, cls, sub, ch);
+                list.appendChild(div);
+              });
+            }
+          }
+          
+          function showExtra(type){
+            hideAll();
+            document.getElementById('classes').style.display = 'block';
+            const titleText = {
+                'model': 'Model Papers',
+                'formula': 'Formula Book',
+                'objective': 'Objective Questions',
+                'syllabus': 'Syllabus',
+                'ncert': 'NCERT Books',
+                'side': 'Side Books'
+            }[type] || 'Free Notes';
+            
+            document.getElementById('classTitle').innerText = `${titleText} - Choose Your Class`;
+            const list = document.getElementById('classList');
+            list.innerHTML = `
+              <div class="card" onclick="showSubjects('${type}', 9)">Class 9</div>
+              <div class="card" onclick="showSubjects('${type}', 10)">Class 10</div>
+              <div class="card" onclick="showSubjects('${type}', 11)">Class 11</div>
+              <div class="card" onclick="showSubjects('${type}', 12)">Class 12</div>
+            `;
+            currentView = 'classes';
+            currentType = type;
+            backButton.style.display = 'none';
+          }
+          
+          function openPDF(type, cls, sub, chapter = null){
+            let linkName;
+            if (chapter) {
+              linkName = chapter;
+            } else {
+              // This is for model papers, formula books, etc.
+              linkName = data[type][cls][sub][0];
+            }
+
+            if(pdfLinks[linkName] && pdfLinks[linkName] !== ""){
+              document.getElementById('pdfViewer').style.display='block';
+              document.getElementById('pdfFrame').src=pdfLinks[linkName];
+            } else {
+              alert("इस PDF को अभी तक अपलोड नहीं किया गया है।");
+            }
+          }
+          
+          function closePDF(){
+            document.getElementById('pdfViewer').style.display = 'none';
+            document.getElementById('pdfFrame').src = '';
+          }
+          
+          function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+          }
+          
+          function goBack() {
+            if (currentView === 'chapters') {
+              showSubjects(currentType, currentClass);
+            } else if (currentView === 'subjects') {
+              goHome();
+            } else {
+              goHome();
+            }
+          }
+          
+          function goHome() {
+            hideAll();
+            showSection('updates');
+            document.getElementById('classes').style.display = 'block';
+            document.getElementById('classTitle').innerText = `Free Notes - Choose Your Class`;
+            document.getElementById('classList').innerHTML = `
+              <div class="card" onclick="showSubjects('notes', 9)">Class 9</div>
+              <div class="card" onclick="showSubjects('notes', 10)">Class 10</div>
+              <div class="card" onclick="showSubjects('notes', 11)">Class 11</div>
+              <div class="card" onclick="showSubjects('notes', 12)">Class 12</div>
+            `;
+            currentView = 'home';
+            backButton.style.display = 'none';
+          }
+          
+          function hideAll(){
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.style.display = 'none');
+          }
+          
+          // Initial load
+          window.onload = goHome;
+        </script>
+      </body>
+    </html>
+  </b:includable>
+</b:theme>
